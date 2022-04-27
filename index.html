@@ -56,7 +56,7 @@ max-width: 650px;
                 </h2>
                 <hr>
                 <p 
-                id="textoCapitulo"
+                id="situacion"
                 class="">
                     Lorem ipsum dolor sit amet consectetur, 
                     adipisicing elit. Doloremque ullam debitis 
@@ -94,7 +94,7 @@ max-width: 650px;
             style="background-color: #F8F0DF;"
         >
 
-        <!------------------------------------------------------------------------------------STATS-->
+        <!------------------------------------------------------------STATS-->
         <div
         id="divStats"
         class="row border-bottom border-3 mx-auto"
@@ -107,7 +107,12 @@ max-width: 650px;
             style="background-color: #EFFFFD;"
             >
                 <h5>Fuerza</h5>
-
+                
+                <!-- Solo en inicio-->
+                <button
+                class="btn btn-success ms-auto"
+                id="buttonFuerza">+1</button>
+                <!-- --------------->
                 <span
                 id="statFuerza"
                 class="fw-bold fs-5 ms-auto"
@@ -146,20 +151,27 @@ max-width: 650px;
                 >5
                 </span>
 
+                <!-- Solo en inicio-->
+                <button
+                class="btn btn-success me-auto"
+                id="buttonCarisma">+1</button>
+                <!-- --------------->
+
+
                 <h5>Carisma</h5>
 
             </div>
         </div>
 
 
-        <!-- ---------------------------------------------------------------------------------CONTENEDOR BOTONES-->
+        <!-- ----------------------------------------------------------------------CONTENEDOR BOTONES-->
             <div class="flex-row text-center my-2 px-3">
 
-                <!-- ---------------------- CONTENEDOR CHARLA------------------------------------------------------------------ ID  divCharlaDisplay -->
+                <!-- ---------------------- CONTENEDOR CHARLA----------------------------------------------- ID  divCharlaDisplay -->
                 <div
                 id="divCharlaDisplay"
                 class="row mx-auto"
-                style=""
+                style="display: none !important;"
                 >
                     <div
                     id="divButtonTalk"
@@ -188,15 +200,15 @@ max-width: 650px;
                     </div>
 
                 </div>        
-                <!-- ----------------------------------CONTENEDOR RESOLVER ---------------------------------------------------- ID  divResolverDisplay -->
+                <!-- ----------------------------------CONTENEDOR RESOLVER ------------------------------ ID  divResolverDisplay -->
 
                 <div
                 id="divResolverDisplay" 
                 class="d-flex flex-column px-5"
-                style=""
+                style="display: none !important;"
                 >
 
-                    <label for="inputResolver" id=""><strong>Resolver</strong></label>
+                    <label for="inputResolver" id=""><strong>Acertijo</strong></label>
 
                     <input 
                     class="form-control border border-3"
@@ -205,15 +217,23 @@ max-width: 650px;
                     placeholder="Escribe aquí..."
                     >
 
+                    <input 
+                    class="mt-2"
+                    type="submit" 
+                    for="inputResolver" 
+                    name="" 
+                    id="inputButton" 
+                    value="Resolver">
+
                 </div>
 
 
 
-                <!-- CONTENEDOR BOTONES ATACAR Y PROTEGER   ------------------------------------------------------------------ ID  divCombateDisplay -->
+                <!-- CONTENEDOR BOTONES ATACAR Y PROTEGER   ------------------------------------------- ID  divCombateDisplay -->
                 <div
                 id="divCombateDisplay"
                 class="row mx-auto"
-                style=""
+                style="display: none !important;"
                 >
                 <!-- ---------------------------------------- BOTONES ATACAR - PROTEGER -->
                     <div 

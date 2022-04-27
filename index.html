@@ -16,9 +16,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
     
 </head>
+
+<!-- 812 de alto como max -->
 <body
-style="background-color: #9D9D9D;"    
+class="mx-auto"
+style="
+background-color: #9D9D9D;
+max-width: 650px;
+"    
 >
+<!-------------------------------------------------------------- TITLE ------------------------------------>
     <div 
     class="border mx-3 mt-1 mb-2 rounded-3 border border-3"
     style="background-color: #FFE162;">
@@ -28,23 +35,29 @@ style="background-color: #9D9D9D;"
                 Adventure Web Game
             </h1>
         </div>
-
+<!-------------------------------------------------------------- IMAGEN ------------------------------------>
         <div class="flex-row border text-center">
             <div>
                 <img class="img-fluid" src="images/mountains.jpg" alt="imagen">
             </div>
         </div>
 
+<!-------------------------------------------------------------- TEXTO ------------------------------------>
         <div 
             class="flex-row border"
             style="background-color: #FEFBF3;"
             >
+
             <div class="text-center mx-3 my-2 py-2">
-                <h2>
+                <h2
+                id="capitulo"
+                >
                     Capitulo 1: El Bosque
                 </h2>
                 <hr>
-                <p class="">
+                <p 
+                id="textoCapitulo"
+                class="">
                     Lorem ipsum dolor sit amet consectetur, 
                     adipisicing elit. Doloremque ullam debitis 
                     fugit atque repellendus in, dolor sit. 
@@ -57,45 +70,189 @@ style="background-color: #9D9D9D;"
                     quos reprehenderit similique aperiam odio 
                     esse minus exercitationem, 
                 </p>
+
+                <div
+                    class="flex-row"
+                >
+                    <h3
+                    id="pregunta"
+                    class="text-center"
+                    >
+                    Bienvenido
+                    </h3>
+                </div>
+
             </div>
             
-        </div>
+            
 
+        </div>
+<!-------------------------------------------------------------- MAIN DIV BOTONES ------------------------------------>
+<!--Si añadimos col-4 al div padre de botones, se colocan en columnas-->
         <div 
             class="flex-row border"
             style="background-color: #F8F0DF;"
         >
-            <div class="row text-center my-2 px-3">
 
-                <div class="col-4 d-flex flex-column">
+        <!------------------------------------------------------------------------------------STATS-->
+        <div
+        id="divStats"
+        class="row border-bottom border-3 mx-auto"
+        >
 
-                    <label for="buttonTalk" id="">Hablar</label>
+        <!----------------------------------------------------------FUERZA-->
+            <div
+            id="divStatFuerza"
+            class="col-5 d-flex justify-content-start border-end border-3"
+            style="background-color: #EFFFFD;"
+            >
+                <h5>Fuerza</h5>
 
-                    <button class="btn btn-primary " type="button" name="" 
-                        id="buttonTalk"><i class="fa-solid fa-comment-dots"></i></button>
+                <span
+                id="statFuerza"
+                class="fw-bold fs-5 ms-auto"
+                >5
+                </span>
 
-                </div>
-        
-                <div class="col-4 d-flex flex-column">
+            </div>
+        <!----------------------------------------------------------COINS-->
+            <div
+            id="divCoins"
+            class="col-2 d-flex justify-content-center"
+            style="background-color: white;"
+            >
+                <h5>
+                    <i class="fa-solid fa-coins text-warning"></i>
+                </h5>
 
-                    <label class="" for="buttonFight" id="">Luchar</label>
+                <span
+                id="coins"
+                class="fw-bold fs-5 ms-1"
+                >0
+                </span>
 
-                    <button class="btn btn-danger " type="button" name="" 
-                    id="buttonFight"><i class="fa-solid fa-bolt"></i></button>
+            </div>
 
-                </div>
+        <!----------------------------------------------------------CARISMA-->
+            <div
+            id="divStatCarisma"
+            class="col-5 d-flex justify-content-end border-start border-3"
+            style="background-color: #F2C9E1;"
+            >
+                
+                <span
+                id="statCarisma"
+                class="fw-bold fs-5 me-auto"
+                >5
+                </span>
 
-                <div class="col-4 d-flex flex-column">
-
-                    <label for="buttonRun" id="">Huir</label>
-
-                    <button class="btn btn-warning " type="button" name="" 
-                        id="buttonRun"><i class="fa-solid fa-person-running"></i></button>
-                </div>
+                <h5>Carisma</h5>
 
             </div>
         </div>
-    </div>    
+
+
+        <!-- ---------------------------------------------------------------------------------CONTENEDOR BOTONES-->
+            <div class="flex-row text-center my-2 px-3">
+
+                <!-- ---------------------- CONTENEDOR CHARLA------------------------------------------------------------------ ID  divCharlaDisplay -->
+                <div
+                id="divCharlaDisplay"
+                class="row mx-auto"
+                style=""
+                >
+                    <div
+                    id="divButtonTalk"
+                    class="col-6 d-flex flex-column"
+                    style=""
+                    >
+
+                        <label for="buttonTalk" id=""><strong>Opcion 1</strong></label>
+
+                        <button class="btn btn-primary" type="button" name="" 
+                            id="buttonTalk"><i class="fa-solid fa-comment-dots"></i></button>
+
+                    </div>
+
+                    <div
+                    id="divButtonTalk"
+                    class="col-6 d-flex flex-column"
+                    style=""
+                    >
+
+                        <label for="buttonTalk" id=""><strong>Opcion 2</strong></label>
+
+                        <button class="btn btn-primary" type="button" name="" 
+                            id="buttonTalk"><i class="fa-solid fa-comment-dots"></i></button>
+
+                    </div>
+
+                </div>        
+                <!-- ----------------------------------CONTENEDOR RESOLVER ---------------------------------------------------- ID  divResolverDisplay -->
+
+                <div
+                id="divResolverDisplay" 
+                class="d-flex flex-column px-5"
+                style=""
+                >
+
+                    <label for="inputResolver" id=""><strong>Resolver</strong></label>
+
+                    <input 
+                    class="form-control border border-3"
+                    type="text" 
+                    id="inputResolver"
+                    placeholder="Escribe aquí..."
+                    >
+
+                </div>
+
+
+
+                <!-- CONTENEDOR BOTONES ATACAR Y PROTEGER   ------------------------------------------------------------------ ID  divCombateDisplay -->
+                <div
+                id="divCombateDisplay"
+                class="row mx-auto"
+                style=""
+                >
+                <!-- ---------------------------------------- BOTONES ATACAR - PROTEGER -->
+                    <div 
+                    class="col-6 d-flex flex-column"
+        
+                    >
+
+                        <label class="" for="buttonFight" id=""><strong>Atacar</strong></label>
+
+                        <button class="btn btn-danger " type="button" name="" 
+                        id="buttonFight"><i class="fa-solid fa-bolt"></i></button>
+
+                    </div>
+
+                    <div 
+                    class="col-6 d-flex flex-column"
+                    
+                    >
+
+                        <label for="buttonShield" id=""><strong>Protegerse</strong></label>
+
+                        <button class="btn btn-warning " type="button" name="" 
+                            id="buttonShield"><i class="fa-solid fa-shield-halved"></i></button>
+                    </div>
+                </div>    
+
+
+            </div> <!-- contenedor botones -->
+        
+        
+        
+        
+        </div> <!-- MAIN DIV BOTONES -->
+<!-------------------------------------------------------------- X ------------------------------------>        
+
+
+    </div> <!-- MAIN WEB DIV --> 
+
 <script src="main.js"></script>
+
 </body>
 </html>

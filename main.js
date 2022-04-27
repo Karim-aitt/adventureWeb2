@@ -32,11 +32,14 @@ let pregunta = document.getElementById("pregunta");
 let charlaDisplay = document.getElementById("divCharlaDisplay");
 let resolverDisplay = document.getElementById("divResolverDisplay");
 let combateDisplay = document.getElementById("divCombatDisplay");
+let buttonInicioDisplay = document.getElementById("divButtonInicio");
+let preguntaDisplay = document.getElementById("divPregunta");
 
 //Botones
 let buttonFight = document.getElementById("buttonFight");
 let buttonShield = document.getElementById("buttonShield");
 let inputResolver = document.getElementById("inputResolver");
+let buttonInicio = document.getElementById("ButtonInicio");
 
 //Solo en inicio
 let buttonFuerza = document.getElementById("buttonFuerza");
@@ -73,38 +76,5 @@ buttonCarisma.addEventListener("click", function(){
     }
 })
 
-
-// if(puntos == 0){
-//     buttonCarisma.style="display: none !important;"
-//     buttonFuerza.style="display: none !important;"
-// }
-
-// let puntos = 0;
-
-// function sumaPuntosInicio(){
-    
-//     buttonFuerza.addEventListener("click", function() {
-//         if(puntos > 0){
-//             countFuerza++
-//             statFuerza.innerHTML = countFuerza
-//         }
-//         puntos--
-//     })
-    
-//     buttonCarisma.addEventListener("click", function(){
-//         if(puntos > 0){
-//             countCarisma++
-//             statCarisma.innerHTML = countCarisma
-//         }
-//         puntos--
-//     })
-    
-//     if(puntos == 0){
-//         buttonFuerza.style="display: none !important;"
-//         buttonCarisma.style="display: none !important;"
-//     }
-// }
-
-// buttonCarisma.addEventListener("click", sumaPuntosInicio())
 // -----------------------------------------
 

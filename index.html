@@ -52,12 +52,14 @@ max-width: 650px;
                 <h2
                 id="capitulo"
                 >
-                    Capitulo 1: El Bosque
+                    Bienvenido
                 </h2>
                 <hr>
                 <p 
-                id="situacion"
-                class="">
+                id="explicacion"
+                class=""
+                
+                >
                     <strong>Adventure Web Game</strong> es un minijuego de navegador
                     basado en texto,
                     deberas de ir avanzando entre distintas escenas
@@ -73,6 +75,118 @@ max-width: 650px;
                     habilidad podrás superar los desafios o no.
                 </p>
 
+                <!--PRIMERA SITUACION TEXTO -->
+                <p 
+                id="situacionInicial"
+                class=""
+                style="display: none !important;"
+                >
+                    Te encuentras viajando a pie hacia casa después de 5 años de recorrer 
+                    el mundo.
+                    <br><br>
+                    Alcanzas la cima de una pequeña colina desde la que se aprecia
+                    el pequeño pueblo al que llamas hogar. De pronto, 
+                    escuchas un ruido de algo moviendose
+                    detrás de un arbusto cercano.
+                    <br><br>
+                    -- Te giras hacia el arbusto --
+
+                </p>
+
+                <!-- SITUACION 2 COMBATE GOBLIN -->
+                <p 
+                id="situacionDos"
+                class=""
+                style="display: none !important;"
+                >
+                    ¡Un pequeño goblin verde sale de un salto del arbusto gritando
+                    cosas raras! Ves que tiene un cuchillo largo en su mano y te mira
+                    con codicia.
+                    <br><br>
+                    <strong>¡Un bandido goblin!</strong>
+                    <br><br>
+                    -- Desenvainas tu espada --
+
+                </p>
+                
+                <!-- TERCERA SITUACION TEXTO GUARDA PUERTA -->
+                <p 
+                id="situacionTres"
+                class=""
+                style="display: none !important;"
+                >
+                    Sigues tu camino hacia el pueblo y llegas a la puerta de la empalizada,
+                    un guardia te corta el paso y te pide la <em>contraseña</em> para pasar.
+                    <br><br>
+                    Tiempos oscuros corren moz@, nadie pasa si no es del pueblo.
+                    <strong></strong>
+                    <br><br>
+                    -- Te rascas la barbilla --
+
+                </p>
+
+                <!-- CUARTA SITUACION ACERTIJO LA CONTRASEÑA -->
+                <p 
+                id="situacionCuatro"
+                class=""
+                style="display: none !important;"
+                >
+                    -- El guarda se fija en tu cara -- <br><br>
+                    ¿No te sabes la contraseña? Me das pena... pareces buena persona,
+                    si llevas más de 3 años fuera del pueblo es posible que no te conozca porque
+                    llegue hace no mucho por trabajo...
+                    <br><br>
+                    <strong>Si resuelves este acertijo te dejaré pasar</strong>
+                    <br><br>
+                    
+
+                </p>
+                
+                <p 
+                id="sitCuatroCarismaExito"
+                class=""
+                style="display: none !important"
+                >
+                    -- El guarda se fija en tu cara -- <br><br>
+                    Ahh... si, ya me acuerdo de tí, pasa pasa, hacia tiempo que no te veía.
+                    <br><br>
+                    <strong>Chequeo de carisma superado con éxito</strong>
+                    <br><br>
+                    
+
+                </p>
+
+                <p 
+                id="sitCuatroCarismaFallo"
+                class=""
+                style="display: none !important;"
+                >
+                    -- El guarda se fija en tu cara -- <br>
+                    <strong>Chequeo de carisma fallado</strong><br><br>
+
+                    La verdad es que no me suenas de nada... pero me das pena... pareces buena persona,
+                    si llevas más de 3 años fuera del pueblo es posible que no te conozca porque
+                    llegue hace no mucho por trabajo...
+
+                    <br><br>
+                    <strong>Si resuelves este acertijo te dejaré pasar</strong>
+                    <br>
+                    
+                </p>
+
+                <p 
+                id="situacionCinco"
+                class=""
+                style="display: none !important;"
+                >
+                    -- El guarda te deja entrar -- <br><br>
+                    Entras al pueblo y comienzas a recordar momentos vividos en cada rincón...<br>
+                    
+
+                </p>
+                
+
+                <!-------------------------------------------------- PREGUNTA -->
                 <div
                     id="divPregunta"
                     class="flex-row"
@@ -83,10 +197,103 @@ max-width: 650px;
                     class="text-center"
                     
                     >
-                    Bienvenido
+                    <strong>¿Qué haces?</strong>
                     </h3>
                 </div>
+                <!-----------------------------------------------BARRAS DE VIDA -->
+                <div
+                id="divVidaDisplay"
+                style="display: none !important"
+                class="flex-row d-flex justify-content-between mt-3"
+                >
+                
+                    <div 
+                    class="progress col-5"
+                    >
+                    
+                        <div 
+                            id="barraVidaUser"
+                            class="progress-bar progress-bar-striped bg-warning" 
+                            role="progressbar" 
+                            style="width: 100%" 
+                            aria-valuenow="100" 
+                            aria-valuemin="0" 
+                            aria-valuemax="100">
+                            <strong>TU VIDA</strong>
+                        </div>
+                    </div>
 
+                    <div 
+                    class="progress col-5"
+                    >
+                        <div 
+                            id="barraVidaEnemigo"
+                            class="progress-bar progress-bar-striped bg-danger" 
+                            role="progressbar" 
+                            style="width: 100%" 
+                            aria-valuenow="100" 
+                            aria-valuemin="0" 
+                            aria-valuemax="100">
+                            <strong>VIDA ENEMIGO</strong>
+                        </div>
+                    </div>
+
+                </div>
+                
+<!-------------------------------------------------------------- MODALES EXITO O DERROTA -->
+<!-- Button trigger exito -->
+                <button
+                style="display: none;"
+                id="buttonModalExito"
+                type="button" 
+                class="btn btn-success mx-auto" 
+                data-bs-toggle="modal" 
+                data-bs-target="#modalExito">
+                    ENHORABUENA, HAS VENCIDO
+                </button>
+<!-- MODAL EXITO-->
+                <div 
+                class="modal fade" 
+                id="modalExito" 
+                tabindex="-1" 
+                aria-labelledby="modalExito" 
+                aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="modalExito">¡Lo has derrotado!</h5>
+
+                        </div>
+                        <div class="modal-body">
+
+                            <p>Enhorabuena por derrotar a tu enemigo. Has ganado un punto
+                                de habilidad, que puedes asignar donde quieras, y una moneda.
+                            </p>
+
+                            <button 
+                            id="buttonModalMasFuerza"
+                            class="btn btn-success">Fuerza +1</button>
+
+                            <button
+                            id="buttonModalMasCarisma"
+                            class="btn btn-success">Carisma +1</button>
+                        </div>
+                        <div class="modal-footer">
+                        <button 
+                            id="buttonSeguirModalExito"
+                            type="button" 
+                            class="btn btn-success" 
+                            data-bs-dismiss="modal">
+                            Seguir
+                        </button>
+                        
+                        </div>
+                    </div>
+                    </div>
+                </div>    
+
+
+                <!-------------------------------------------------- BUTTON INICIO -->
                 <div
                 id="divButtonInicio"
                 class=""
@@ -99,6 +306,7 @@ max-width: 650px;
                      INICIAR
                     </button>   
                 </div>
+  
 
             </div>
             
@@ -194,31 +402,31 @@ max-width: 650px;
                     <div
                     id="divButtonTalk"
                     class="col-6 d-flex flex-column"
-                    style=""
+                    
                     >
 
-                        <label for="buttonTalk" id=""><strong>Opcion 1</strong></label>
+                        <label for="buttonTalk1" id="labelTalk1">Opcion 1</label>
 
-                        <button class="btn btn-primary" type="button" name="" 
-                            id="buttonTalk"><i class="fa-solid fa-comment-dots"></i></button>
+                        <button class="btn btn-primary mt-auto opcion1" type="button" name="" 
+                            id="buttonTalk1"><i class="fa-solid fa-comment-dots"></i></button>
 
                     </div>
 
                     <div
                     id="divButtonTalk"
                     class="col-6 d-flex flex-column"
-                    style=""
+                    
                     >
 
-                        <label for="buttonTalk" id=""><strong>Opcion 2</strong></label>
+                        <label for="buttonTalk2" id="labelTalk2">Opcion 2</label>
 
-                        <button class="btn btn-primary" type="button" name="" 
-                            id="buttonTalk"><i class="fa-solid fa-comment-dots"></i></button>
+                        <button class="btn btn-primary mt-auto opcion1" type="button" name="" 
+                            id="buttonTalk2"><i class="fa-solid fa-comment-dots"></i></button>
 
                     </div>
 
                 </div>        
-                <!-- ----------------------------------CONTENEDOR RESOLVER ------------------------------ ID  divResolverDisplay -->
+                <!-- --------------------INPUT------CONTENEDOR RESOLVER ------------------------------ ID  divResolverDisplay -->
 
                 <div
                 id="divResolverDisplay" 
@@ -226,7 +434,7 @@ max-width: 650px;
                 style="display: none !important;"
                 >
 
-                    <label for="inputResolver" id=""><strong>Acertijo</strong></label>
+                    <!-- <label for="inputResolver" id=""><strong>Acertijo</strong></label> -->
 
                     <input 
                     class="form-control border border-3"
@@ -236,7 +444,7 @@ max-width: 650px;
                     >
 
                     <input 
-                    class="mt-2"
+                    class="mt-2 rounded-pill"
                     type="submit" 
                     for="inputResolver" 
                     name="" 

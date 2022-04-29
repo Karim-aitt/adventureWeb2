@@ -32,6 +32,7 @@ let sitCuatroCarismaExito = document.getElementById("sitCuatroCarismaExito");
 let sitCuatroCarismaFallo = document.getElementById("sitCuatroCarismaFallo");
 
 let situacionSeisTaberna = document.getElementById("situacionSeisTaberna");
+let situacionSeisTabernaDos = document.getElementById("situacionSeisTabernaDos");
 let situacionSeisTienda = document.getElementById("situacionSeisTienda");
 
 // -----------------------------------------SELECTORES
@@ -55,6 +56,7 @@ let preguntaDisplay = document.getElementById("divPregunta");
 let vidaDisplay = document.getElementById("divVidaDisplay");
 let continuarDisplay = document.getElementById("divButtonContinuar");
 let tiendaDisplay = document.getElementById("divOpcionesTienda");
+let SalirTiendaDisplay = document.getElementById("divButtonSalirTienda");
 
 //Barras de Vida
 let barraVidaUser = document.getElementById("barraVidaUser");
@@ -91,6 +93,9 @@ let buttonContinuar = document.getElementById("buttonContinuar");
 //TIENDA
 let buttonPocion = document.getElementById("buttonPocion");
 let buttonEspadaGrande = document.getElementById("buttonEspadaGrande");
+let buttonMochila = document.getElementById("buttonMochila");
+let buttonCuerda = document.getElementById("buttonCuerda");
+let buttonSalirTienda = document.getElementById("buttonSalirTienda");
 
 // -----------------------------------------
 
@@ -448,16 +453,10 @@ buttonContinuar.addEventListener("click", function(){
     charlaDisplay.style="display: flex"
     labelTalk1.innerHTML="<strong>A la taberna CONT</strong>"
     labelTalk2.innerHTML="<strong>A la tienda CONT</strong>"
-    countSit++
-    console.log(countSit);
+    countSit++  // -------------------------------------COUNTSIT 4 -> 5
+    console.log(countSit + "" + "Si pasa carisma");
 })
 
-// BUTTON TALK1 DE SITUACION CINCO (A LA TABERNA)
-buttonTalk1.addEventListener("click", function(){
-    if(countSit == 5){
-
-    }
-})
 
 // BUTTON TALK1 DE SITUACION CINCO (A LA TIENDA)
 buttonTalk2.addEventListener("click", function(){
@@ -473,6 +472,8 @@ buttonTalk2.addEventListener("click", function(){
 
         document.getElementById("labelPrecioPocionVida").innerHTML=`<strong>Pocion de vida</strong> [<i class="fa-solid fa-coins text-warning"></i> <strong>1</strong>]`
         document.getElementById("labelPrecioEspadaGrande").innerHTML=`<strong>Espada grande</strong> [<i class="fa-solid fa-coins text-warning"></i> <strong>3</strong>]`
+        document.getElementById("labelPrecioMochila").innerHTML=`<strong>Mochila</strong> [<i class="fa-solid fa-coins text-warning"></i> <strong>5</strong>]`
+        document.getElementById("labelPrecioCuerda").innerHTML=`<strong>Cuerda</strong> [<i class="fa-solid fa-coins text-warning"></i> <strong>2</strong>]`
     }
 
 })
@@ -481,16 +482,21 @@ buttonTalk2.addEventListener("click", function(){
 //Inventario jugador:
 let pocionDeVida = 0;
 let espadaGrande = 0;
+let mochila = 0;
+let cuerda = 0;
 
 //tienda
 let precioPocion = 1;
 let precioEspadaGrande = 3;
+let precioMochila = 5;
+let precioCuerda = 2;
 
 buttonPocion.addEventListener("click", function(){
     if(playerCoins >= precioPocion){
         playerCoins = playerCoins - precioPocion;
         coins.innerHTML = playerCoins
         inventario.style="display: inherit";
+        pocionDeVida++
 
     } else {
         buttonPocion.classList.remove("btn-warning");
@@ -503,6 +509,7 @@ buttonEspadaGrande.addEventListener("click", function(){
     if(playerCoins >= precioEspadaGrande){
         playerCoins = playerCoins - precioEspadaGrande;
         coins.innerHTML = playerCoins
+        espadaGrande++
         //meter objeto
 
     } else {
@@ -510,4 +517,79 @@ buttonEspadaGrande.addEventListener("click", function(){
         buttonEspadaGrande.classList.add("btn-danger");
         buttonEspadaGrande.innerHTML="No tienes dinero";
     }
+})
+
+buttonMochila.addEventListener("click", function(){
+    if(playerCoins >= precioMochila){
+        playerCoins = playerCoins - precioMochila;
+        coins.innerHTML = playerCoins
+        inventario.style="display: inherit";
+
+    } else {
+        buttonMochila.classList.remove("btn-warning");
+        buttonMochila.classList.add("btn-danger");
+        buttonMochila.innerHTML="No tienes dinero";
+    }
+})
+
+buttonCuerda.addEventListener("click", function(){
+    if(playerCoins >= precioCuerda){
+        playerCoins = playerCoins - precioCuerda;
+        coins.innerHTML = playerCoins
+        inventario.style="display: inherit";
+
+    } else {
+        buttonCuerda.classList.remove("btn-warning");
+        buttonCuerda.classList.add("btn-danger");
+        buttonCuerda.innerHTML="No tienes dinero";
+    }
+})
+// ------------------------------------------------- SALIR TIENDA
+buttonSalirTienda.addEventListener("click", function(){
+    if(countSit == 5){
+    situacionSeisTienda.style="display: none !important"
+    tiendaDisplay.style="display: none !important"
+
+    situacionCinco.style="display: inherit";
+    preguntaDisplay.style="display: inherit";
+    pregunta.innerHTML="<h3>¿A donde te dirijes?</h3>"
+
+    charlaDisplay.style="display: flex"
+    labelTalk1.innerHTML="<strong>A la taberna CONT</strong>"
+    labelTalk2.innerHTML="<strong>A la tienda CONT</strong>"
+    
+    }
+})
+
+// BUTTON TALK1 DE SITUACION CINCO (A LA TABERNA)
+
+buttonTalk1.addEventListener("click", function(){
+    if(countSit == 5){
+        situacionCinco.style="display: none !important"
+        pregunta.innerHTML="<h3>¿Qué haces?</h3>"
+        labelTalk1.innerHTML="<strong>Te acercas a tu amigo</strong>"
+        labelTalk2.innerHTML="<strong>Te vas</strong>"
+    
+        situacionSeisTaberna.style="display: inherit";
+        charlaDisplay.style="display: flex";
+        console.log(countSit + "antes")
+        countSit++
+        console.log(countSit + "despues")
+        }
+
+})
+// HAY QUE SUSTITUIR buttonTalk1 \| por buttonTalk3 
+
+buttonTalk1.addEventListener("click", function(){
+    
+    if(countSit == 6){
+        situacionSeisTabernaDos.style="display: inherit"
+        pregunta.innerHTML="<h3>¿Puedes ayudarme a recuperarla? Te pagaré bien</h3>"
+
+        situacionSeisTaberna.style="display: none !important"
+
+        labelTalk1.innerHTML="<strong>Tranquilo, yo me encargo</strong>"
+        labelTalk2.innerHTML="<strong>No, no es mi asunto</strong>"
+    }
+
 })

@@ -48,7 +48,7 @@ max-width: 650px;
             style="background-color: #FEFBF3;"
             >
 
-            <div class="text-center mx-3 mt-2 pt-2 mb-2">
+            <div class="text-center mx-3 mt-2 pt-2 mb-3">
                 <h2
                 id="capitulo"
                 >
@@ -181,7 +181,10 @@ max-width: 650px;
                 style="display: none !important;"
                 >
                     -- El guarda te deja entrar -- <br><br>
-                    Entras al pueblo y comienzas a recordar momentos vividos en cada rincón...<br>
+                    El pueblo no es muy grande pero lo suficiente como para que la cantidad 
+                    de casas no te deje ver el final.<br><br>Se agrupan entorno a una gran plaza principal
+                    en cuyo centro hay un árbol gigante. <br><br>Puedes observar un par de letreros
+                    interesantes. Tienda de Boris, Taberna El Goblin Orejudo. <br>
                     
 
                 </p>
@@ -217,10 +220,23 @@ max-width: 650px;
                      al entrar.
             
                     
-
                 </p>
 
+                <p 
+                id="situacionSeisTabernaDos"
+                class=""
+                style="display: none !important;"
+                >
+                    <em>"Se te ve serio viejo amigo"</em><br><br>
+                    -- El hombre te mira sorprendido y sonríe con esfuerzo -- <br><br>
+                    Vaya, hacia mucho que no nos veíamos, me alegra verte de nuevo...<br>
+                    Sí bueno... hace unos días unos bandidos me robaron de camino al pueblo
+                    y se llevaron una reliquia de mi familia muy valiosa a su guarida...<br>
+                    Se que esto es un poco raro después de tanto tiempo pero...
+
                 
+                    
+                </p>
 
 
 
@@ -464,7 +480,7 @@ max-width: 650px;
             <!-- ----------------------------------------------------------------------CONTENEDOR BOTONES-->
             <div class="flex-row text-center my-2 px-3">
 
-                <!-- ---------------------- CONTENEDOR CHARLA---------------------- ID  divCharlaDisplay -->
+                <!-- ---------------------- CONTENEDOR CHARLA -------------------- ID  divCharlaDisplay -->
                 <div
                 id="divCharlaDisplay"
                 class="row mx-auto"
@@ -496,7 +512,10 @@ max-width: 650px;
 
                     </div>
 
-                </div>        
+                </div> 
+                <!-- ---------------------- CONTENEDOR CHARLA -------------------- ID  divCharlaDisplay -->
+                <!-- HAY QUE CREAR 2 BOTONES MAS PARA UN CONTENEDOR CHARLA 2 -->
+                
                 <!-- --------------------INPUT------CONTENEDOR RESOLVER ----------- ID  divResolverDisplay -->
 
                 <div
@@ -569,7 +588,7 @@ max-width: 650px;
                     >
 
                         <label 
-                        class="" 
+                        class="mb-1" 
                         for="buttonPocion" 
                         id="labelPrecioPocionVida">
                         <strong>Pocion de vida </strong>
@@ -586,7 +605,7 @@ max-width: 650px;
                     >
 
                         <label 
-                        class="" 
+                        class="mb-1" 
                         for="buttonEspadaGrande" 
                         id="labelPrecioEspadaGrande">
                         <strong>Espada grande</strong>
@@ -596,13 +615,51 @@ max-width: 650px;
                         id="buttonEspadaGrande">Comprar</button>
 
                     </div>
-<!----------------------------------------------------------------- BOTON SALIR DE LA TIENDA -->
+
                     <div 
-                    class="d-flex flex-column text-center mt-2"
+                    class="col-6 d-flex flex-column"
         
                     >
+
+                        <label 
+                        class="mb-1" 
+                        for="buttonMochila" 
+                        id="labelPrecioMochila">
+                        <strong>Mochila</strong>
+                        </label>
+
+                        <button class="btn btn-warning" type="button" name="" 
+                        id="buttonMochila">Comprar</button>
+
+                    </div>
+
+                    <div 
+                    class="col-6 d-flex flex-column"
+        
+                    >
+
+                        <label 
+                        class="mb-1" 
+                        for="buttonCuerda" 
+                        id="labelPrecioCuerda">
+                        <strong>Cuerda</strong>
+                        </label>
+
+                        <button class="btn btn-warning" type="button" name="" 
+                        id="buttonCuerda">Comprar</button>
+
+                    </div>
+                    
+                       
+                   
+<!----------------------------------------------------------------- BOTON SALIR DE LA TIENDA -->
+                    <div
+                    id="divButtonSalirTienda"
+                    class="d-flex flex-column text-center mt-2"
+                    
+                    >
                         <button class="btn btn-dark col-5 mx-auto" type="button" name="" 
-                        id="buttonSalir">Salir</button>
+                        id="buttonSalirTienda">Salir</button>
 
                     </div>
 

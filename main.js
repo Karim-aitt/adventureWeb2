@@ -45,10 +45,13 @@ let pregunta = document.getElementById("divPregunta");
 // charla
 let labelTalk1 = document.getElementById("labelTalk1");
 let labelTalk2 = document.getElementById("labelTalk2");
+let labelTalk3 = document.getElementById("labelTalk3");
+let labelTalk4 = document.getElementById("labelTalk4")
 // -----------------------------------------
 
 //Displays
 let charlaDisplay = document.getElementById("divCharlaDisplay");
+let charla2Display = document.getElementById("divCharla2Display");
 let resolverDisplay = document.getElementById("divResolverDisplay");
 let combateDisplay = document.getElementById("divCombateDisplay");
 let buttonInicioDisplay = document.getElementById("divButtonInicio");
@@ -76,6 +79,8 @@ let inputResolver = document.getElementById("inputResolver");
 //charla
 let buttonTalk1 = document.getElementById("buttonTalk1");
 let buttonTalk2 = document.getElementById("buttonTalk2");
+let buttonTalk3 = document.getElementById("buttonTalk3");
+let buttonTalk4 = document.getElementById("buttonTalk4");
 //MODAL
 let buttonModalExito = document.getElementById("buttonModalExito");
 let buttonSeguirModalExito = document.getElementById("buttonSeguirModalExito");
@@ -567,11 +572,12 @@ buttonTalk1.addEventListener("click", function(){
     if(countSit == 5){
         situacionCinco.style="display: none !important"
         pregunta.innerHTML="<h3>¿Qué haces?</h3>"
-        labelTalk1.innerHTML="<strong>Te acercas a tu amigo</strong>"
-        labelTalk2.innerHTML="<strong>Te vas</strong>"
+        labelTalk3.innerHTML="<strong>Te acercas a tu amigo</strong>"
+        labelTalk4.innerHTML="<strong>Te vas</strong>"
     
         situacionSeisTaberna.style="display: inherit";
-        charlaDisplay.style="display: flex";
+        charlaDisplay.style="display: none !important";
+        charla2Display.style="display: flex";
         console.log(countSit + "antes")
         countSit++
         console.log(countSit + "despues")
@@ -580,7 +586,7 @@ buttonTalk1.addEventListener("click", function(){
 })
 // HAY QUE SUSTITUIR buttonTalk1 \| por buttonTalk3 
 
-buttonTalk1.addEventListener("click", function(){
+buttonTalk3.addEventListener("click", function(){
     
     if(countSit == 6){
         situacionSeisTabernaDos.style="display: inherit"
@@ -588,8 +594,8 @@ buttonTalk1.addEventListener("click", function(){
 
         situacionSeisTaberna.style="display: none !important"
 
-        labelTalk1.innerHTML="<strong>Tranquilo, yo me encargo</strong>"
-        labelTalk2.innerHTML="<strong>No, no es mi asunto</strong>"
+        labelTalk3.innerHTML="<strong>Tranquilo, yo me encargo</strong>"
+        labelTalk4.innerHTML="<strong>No, no es mi asunto</strong>"
     }
 
 })

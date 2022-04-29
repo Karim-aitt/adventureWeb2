@@ -8,7 +8,7 @@ let statFuerza = document.getElementById("statFuerza");
 let countCarisma = 5;   //statCarisma
 let statCarisma = document.getElementById("statCarisma");
 
-let countCoins = 0;      //coins
+let playerCoins = 0;      //coins
 let coins = document.getElementById("coins");
 // -------------------------VIDA
 let vidaUser = 100;
@@ -31,6 +31,9 @@ let situacionCinco = document.getElementById("situacionCinco");
 let sitCuatroCarismaExito = document.getElementById("sitCuatroCarismaExito");
 let sitCuatroCarismaFallo = document.getElementById("sitCuatroCarismaFallo");
 
+let situacionSeisTaberna = document.getElementById("situacionSeisTaberna");
+let situacionSeisTienda = document.getElementById("situacionSeisTienda");
+
 // -----------------------------------------SELECTORES
 
 //Cajas de texto
@@ -50,14 +53,19 @@ let combateDisplay = document.getElementById("divCombateDisplay");
 let buttonInicioDisplay = document.getElementById("divButtonInicio");
 let preguntaDisplay = document.getElementById("divPregunta");
 let vidaDisplay = document.getElementById("divVidaDisplay");
+let continuarDisplay = document.getElementById("divButtonContinuar");
+let tiendaDisplay = document.getElementById("divOpcionesTienda");
 
 //Barras de Vida
 let barraVidaUser = document.getElementById("barraVidaUser");
 let barraVidaEnemigo = document.getElementById("barraVidaEnemigo");
 
+//OBJETOSAVENTURA
+let inventario = document.getElementById("divInventario");
+
 // -----------------------------------------
 
-// --------------- Botones
+// --------------- BOTONES
 //combate
 let buttonFight = document.getElementById("buttonFight");
 let buttonShield = document.getElementById("buttonShield");
@@ -76,6 +84,13 @@ let buttonModalMasCarisma = document.getElementById("buttonModalMasCarisma");
 let buttonFuerza = document.getElementById("buttonFuerza");
 let buttonCarisma = document.getElementById("buttonCarisma");
 let buttonInicio = document.getElementById("buttonInicio");
+
+//continuar
+let buttonContinuar = document.getElementById("buttonContinuar");
+
+//TIENDA
+let buttonPocion = document.getElementById("buttonPocion");
+let buttonEspadaGrande = document.getElementById("buttonEspadaGrande");
 
 // -----------------------------------------
 
@@ -278,6 +293,11 @@ buttonShield.addEventListener("click", function(){
     
     }
 })
+buttonModalExito.addEventListener("click", function(){
+    vidaEnemigo = 100;
+    barraVidaEnemigo.style="width: 100%"
+    console.log(vidaEnemigo);
+})
 
 // MODAL EXITO
 let puntosModalExito = 1;
@@ -285,9 +305,9 @@ let puntosModalExito = 1;
 buttonModalMasFuerza.addEventListener("click", function(){
     if(puntosModalExito > 0){
         countFuerza++
-        countCoins++
+        playerCoins++
         statFuerza.innerHTML = countFuerza
-        coins.innerHTML = countCoins
+        coins.innerHTML = playerCoins
     }
     puntosModalExito--
 
@@ -300,9 +320,9 @@ buttonModalMasFuerza.addEventListener("click", function(){
 buttonModalMasCarisma.addEventListener("click", function(){
     if(puntosModalExito > 0){
         countCarisma++
-        countCoins++
+        playerCoins++
         statCarisma.innerHTML = countCarisma
-        coins.innerHTML = countCoins
+        coins.innerHTML = playerCoins
     }
     puntosModalExito--
 
@@ -358,8 +378,8 @@ buttonTalk1.addEventListener("click", function(){
             sitCuatroCarismaExito.style="display: inherit";
             pregunta.style="display: none";
 
-            //FALTA AÑADIR BOTON PARA SEGUIR SITUACION
-
+            continuarDisplay.style="display: inherit";
+            
 
         //SI NO PASA CARISMA    
         } else {
@@ -394,20 +414,100 @@ inputButton.addEventListener("click", function(){
 
         situacionCinco.style="display: inherit";
         preguntaDisplay.style="display: inherit";
-        pregunta.innerHTML="<h3>¿A dónde te dirijes?</h3>";
+        pregunta.innerHTML="<h3>¿A donde te dirijes?</h3>";
 
         charlaDisplay.style="display: flex";
-        resolverDisplay.style="display: none";   // no funciona, no se oculta.
-        inputResolver.style="display:none";
-        inputButton.style="display: none";
+        resolverDisplay.style="display: none !important"; 
+
+        labelTalk1.innerHTML="<strong>A la taberna INPUT</strong>"
+        labelTalk2.innerHTML="<strong>A la tienda INPUT</strong>"
+        countSit++
+        console.log(countSit)
 
     } else {
         inputResolver.placeholder="No es correcto, otra oportunidad"
         inputResolver.value=""
         inputButton.classList.add("bg-danger");
         console.log("nop")
+
+        //meter condicion de perdida (3 oportunidades)
     }
 
 })
 
+// BOTON CONTINUAR DE SI PASA CARISMA
+buttonContinuar.addEventListener("click", function(){
 
+    sitCuatroCarismaExito.style="display: none";
+    continuarDisplay.style="display: none";
+
+    situacionCinco.style="display: inherit";
+    preguntaDisplay.style="display: inherit";
+    pregunta.innerHTML="<h3>¿A donde te dirijes?</h3>"
+
+    charlaDisplay.style="display: flex"
+    labelTalk1.innerHTML="<strong>A la taberna CONT</strong>"
+    labelTalk2.innerHTML="<strong>A la tienda CONT</strong>"
+    countSit++
+    console.log(countSit);
+})
+
+// BUTTON TALK1 DE SITUACION CINCO (A LA TABERNA)
+buttonTalk1.addEventListener("click", function(){
+    if(countSit == 5){
+
+    }
+})
+
+// BUTTON TALK1 DE SITUACION CINCO (A LA TIENDA)
+buttonTalk2.addEventListener("click", function(){
+    if(countSit == 5){
+
+        situacionCinco.style="display: none !important"
+        situacionSeisTienda.style="display: inherit !important"
+        preguntaDisplay.style="display: inherit"
+        pregunta.innerHTML="<h3>¿Qué necesitas joven?</h3>"
+
+        charlaDisplay.style="display: none !important"
+        tiendaDisplay.style="display: flex !important"
+
+        document.getElementById("labelPrecioPocionVida").innerHTML=`<strong>Pocion de vida</strong> [<i class="fa-solid fa-coins text-warning"></i> <strong>1</strong>]`
+        document.getElementById("labelPrecioEspadaGrande").innerHTML=`<strong>Espada grande</strong> [<i class="fa-solid fa-coins text-warning"></i> <strong>3</strong>]`
+    }
+
+})
+
+// ------------ SISTEMA TIENDA ----------
+//Inventario jugador:
+let pocionDeVida = 0;
+let espadaGrande = 0;
+
+//tienda
+let precioPocion = 1;
+let precioEspadaGrande = 3;
+
+buttonPocion.addEventListener("click", function(){
+    if(playerCoins >= precioPocion){
+        playerCoins = playerCoins - precioPocion;
+        coins.innerHTML = playerCoins
+        inventario.style="display: inherit";
+
+    } else {
+        buttonPocion.classList.remove("btn-warning");
+        buttonPocion.classList.add("btn-danger");
+        buttonPocion.innerHTML="No tienes dinero";
+    }
+})
+
+buttonEspadaGrande.addEventListener("click", function(){
+    if(playerCoins >= precioEspadaGrande){
+        playerCoins = playerCoins - precioEspadaGrande;
+        coins.innerHTML = playerCoins
+        //meter objeto
+
+    } else {
+        buttonEspadaGrande.classList.remove("btn-warning");
+        buttonEspadaGrande.classList.add("btn-danger");
+        buttonEspadaGrande.innerHTML="No tienes dinero";
+    }
+})

@@ -48,7 +48,7 @@ max-width: 650px;
             style="background-color: #FEFBF3;"
             >
 
-            <div class="text-center mx-3 my-2 py-2">
+            <div class="text-center mx-3 mt-2 pt-2 mb-2">
                 <h2
                 id="capitulo"
                 >
@@ -152,8 +152,9 @@ max-width: 650px;
                     <br><br>
                     <strong>Chequeo de carisma superado con éxito</strong>
                     <br><br>
+                    <!-------------------------------------------------- BUTTON CONTINUAR -->
+                       
                     
-
                 </p>
 
                 <p 
@@ -185,6 +186,47 @@ max-width: 650px;
 
                 </p>
                 
+                <p 
+                id="situacionSeisTaberna"
+                class=""
+                style="display: none !important;"
+                >
+                    -- Entras en la taberna -- <br><br>
+                    La taberna esta llena de gente, parece que es lo poco que tiene la gente
+                    del pueblo para socializar, tras pedir una jarra de cerveza te das cuenta
+                    de que en una mesa cercana esta sentado solo un viejo amigo. 
+
+                    <br><br>
+                    <strong>Tiene una cara seria y pensativa</strong>
+                    <br>
+                    
+                </p>
+
+                <p 
+                id="situacionSeisTienda"
+                class=""
+                style="display: none !important;"
+                >
+                    -- Entras en la tienda -- <br><br>
+                    Es una tienda antigua, llena de baratijas y polvo. Puedes observar muchas estanterias
+                    con frascos llenos de cosas raras, armas colgadas de una pared y otras mercancias
+                    distribuidas de forma aparentemente ilógica por la tienda.
+                    <br><br>
+                    En el mostrador, al lado de un saco de avena,
+                     se encuentra un hombre de edad avanzada con unas gafas redondas muy gruesas que te mira 
+                     al entrar.
+            
+                    
+
+                </p>
+
+                
+
+
+
+
+
+
 
                 <!-------------------------------------------------- PREGUNTA -->
                 <div
@@ -296,7 +338,7 @@ max-width: 650px;
                 <!-------------------------------------------------- BUTTON INICIO -->
                 <div
                 id="divButtonInicio"
-                class=""
+                class="mb-2"
                 
                 >
                     <button
@@ -306,7 +348,33 @@ max-width: 650px;
                      INICIAR
                     </button>   
                 </div>
-  
+
+                <div
+                    id="divButtonContinuar"
+                    style="display: none !important"
+                    >
+                        <button
+                        id="buttonContinuar"
+                        class="btn btn-dark"
+                        >Continuar
+                        </button>
+                </div>
+
+                <div
+                    id="divInventario"
+                    class="flex-row d-flex justify-content-start mb-1 mt-1"
+                    style="display: none !important"
+                    >
+                    <button
+                    id="inventarioPocionVida"
+                    class="btn btn-sm btn-danger me-2"
+                    
+                    >
+                    <i class="fa-solid fa-flask"></i>
+                    <span id="numeroPociones">1</span>
+                    </button>
+
+                </div>
 
             </div>
             
@@ -320,80 +388,83 @@ max-width: 650px;
             style="background-color: #F8F0DF;"
         >
 
-        <!------------------------------------------------------------STATS-->
-        <div
-        id="divStats"
-        class="row border-bottom border-3 mx-auto"
-        >
 
-        <!----------------------------------------------------------FUERZA-->
+            <!------------------------------------------------------------STATS-->
             <div
-            id="divStatFuerza"
-            class="col-5 d-flex justify-content-start border-end border-3"
-            style="background-color: #EFFFFD;"
+            id="divStats"
+            class="row border-bottom border-3 mx-auto"
             >
-                <h5>Fuerza</h5>
-                
-                <!-- Solo en inicio-->
-                <button
-                class="btn btn-success ms-auto"
-                id="buttonFuerza">+1</button>
-                <!-- --------------->
-                <span
-                id="statFuerza"
-                class="fw-bold fs-5 ms-auto"
-                >5
-                </span>
 
+            <!----------------------------------------------------------FUERZA-->
+                <div
+                id="divStatFuerza"
+                class="col-5 d-flex justify-content-start border-end border-3 align-items-center"
+                style="background-color: #EFFFFD;"
+                >
+                    <h5 >Fuerza</h5>
+                    
+                    <!-- Solo en inicio-->
+                    <button
+                    class="btn btn-success ms-auto"
+                    id="buttonFuerza">+1</button>
+                    <!-- --------------->
+                    <span
+                    id="statFuerza"
+                    class="fw-bold fs-5 ms-auto"
+                    >5
+                    </span>
+
+                </div>
+            <!----------------------------------------------------------COINS-->
+                <div
+                id="divCoins"
+                class="col-2 d-flex justify-content-center align-items-center"
+                style="background-color: white;"
+                >
+                    <h5>
+                        <i class="fa-solid fa-coins text-warning"></i>
+                    </h5>
+
+                    <span
+                    id="coins"
+                    class="fw-bold fs-5 ms-1"
+                    >0
+                    </span>
+
+                </div>
+
+            <!----------------------------------------------------------CARISMA-->
+                <div
+                id="divStatCarisma"
+                class="col-5 d-flex justify-content-end border-start border-3 align-items-center"
+                style="background-color: #F2C9E1;"
+                >
+                    
+                    <span
+                    id="statCarisma"
+                    class="fw-bold fs-5 me-auto"
+                    >5
+                    </span>
+
+                    <!-- Solo en inicio-->
+                    <button
+                    class="btn btn-success me-auto"
+                    id="buttonCarisma">+1</button>
+
+                    
+                    <!-- --------------->
+
+
+                    <h5>Carisma</h5>
+
+                </div>
             </div>
-        <!----------------------------------------------------------COINS-->
-            <div
-            id="divCoins"
-            class="col-2 d-flex justify-content-center"
-            style="background-color: white;"
-            >
-                <h5>
-                    <i class="fa-solid fa-coins text-warning"></i>
-                </h5>
-
-                <span
-                id="coins"
-                class="fw-bold fs-5 ms-1"
-                >0
-                </span>
-
-            </div>
-
-        <!----------------------------------------------------------CARISMA-->
-            <div
-            id="divStatCarisma"
-            class="col-5 d-flex justify-content-end border-start border-3"
-            style="background-color: #F2C9E1;"
-            >
-                
-                <span
-                id="statCarisma"
-                class="fw-bold fs-5 me-auto"
-                >5
-                </span>
-
-                <!-- Solo en inicio-->
-                <button
-                class="btn btn-success me-auto"
-                id="buttonCarisma">+1</button>
-                <!-- --------------->
 
 
-                <h5>Carisma</h5>
-
-            </div>
-        </div>
-
-
-        <!-- ----------------------------------------------------------------------CONTENEDOR BOTONES-->
+            <!-- ----------------------------------------------------------------------CONTENEDOR BOTONES-->
             <div class="flex-row text-center my-2 px-3">
 
-                <!-- ---------------------- CONTENEDOR CHARLA----------------------------------------------- ID  divCharlaDisplay -->
+                <!-- ---------------------- CONTENEDOR CHARLA---------------------- ID  divCharlaDisplay -->
                 <div
                 id="divCharlaDisplay"
                 class="row mx-auto"
@@ -426,7 +497,7 @@ max-width: 650px;
                     </div>
 
                 </div>        
-                <!-- --------------------INPUT------CONTENEDOR RESOLVER ------------------------------ ID  divResolverDisplay -->
+                <!-- --------------------INPUT------CONTENEDOR RESOLVER ----------- ID  divResolverDisplay -->
 
                 <div
                 id="divResolverDisplay" 
@@ -455,7 +526,7 @@ max-width: 650px;
 
 
 
-                <!-- CONTENEDOR BOTONES ATACAR Y PROTEGER   ------------------------------------------- ID  divCombateDisplay -->
+                <!-- CONTENEDOR BOTONES ATACAR Y PROTEGER   ------------------- ID  divCombateDisplay -->
                 <div
                 id="divCombateDisplay"
                 class="row mx-auto"
@@ -485,6 +556,57 @@ max-width: 650px;
                             id="buttonShield"><i class="fa-solid fa-shield-halved"></i></button>
                     </div>
                 </div>    
+<!-- ----------------------------------------------------------TIENDA----------------------->
+                <div
+                id="divOpcionesTienda"
+                class="row mx-auto"
+                style="display: none !important"
+                >
+
+                <div 
+                    class="col-6 d-flex flex-column"
+        
+                    >
+
+                        <label 
+                        class="" 
+                        for="buttonPocion" 
+                        id="labelPrecioPocionVida">
+                        <strong>Pocion de vida </strong>
+                        </label>
+
+                        <button class="btn btn-warning" type="button" name="" 
+                        id="buttonPocion">Comprar</button>
+
+                    </div>
+
+                    <div 
+                    class="col-6 d-flex flex-column"
+        
+                    >
+
+                        <label 
+                        class="" 
+                        for="buttonEspadaGrande" 
+                        id="labelPrecioEspadaGrande">
+                        <strong>Espada grande</strong>
+                        </label>
+
+                        <button class="btn btn-warning" type="button" name="" 
+                        id="buttonEspadaGrande">Comprar</button>
+
+                    </div>
+<!----------------------------------------------------------------- BOTON SALIR DE LA TIENDA -->
+                    <div 
+                    class="d-flex flex-column text-center mt-2"
+        
+                    >
+                        <button class="btn btn-dark col-5 mx-auto" type="button" name="" 
+                        id="buttonSalir">Salir</button>
+
+                    </div>
+
+                </div>
 
 
             </div> <!-- contenedor botones -->
@@ -492,7 +614,7 @@ max-width: 650px;
         
         
         
-        </div> <!-- MAIN DIV BOTONES -->
+        </div> <!-- MAIN DIV BOTONES Y STATS -->
 <!-------------------------------------------------------------- X ------------------------------------>        
 
 
